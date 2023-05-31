@@ -3,8 +3,8 @@ package v2ui
 import "x-ui/database/model"
 
 type V2Inbound struct {
-	Id             int    `gorm:"primaryKey;autoIncrement"`
-	Port           int    `gorm:"unique"`
+	Id             int `gorm:"primaryKey;autoIncrement"`
+	Port           int `gorm:"unique"`
 	Listen         string
 	Protocol       string
 	Settings       string
@@ -18,8 +18,7 @@ type V2Inbound struct {
 }
 
 func (i *V2Inbound) TableName() string {
-	// 返回表名为 "inbound"
-	return "inbound" 
+	return "inbound"
 }
 
 func (i *V2Inbound) ToInbound(userId int) *model.Inbound {
