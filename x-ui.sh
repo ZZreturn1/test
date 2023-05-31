@@ -370,7 +370,7 @@ migrate_v2_ui() {
 }
 
 acme() {
-   wget -N https://gitlab.com/rwkgyg/acme-script/raw/main/acme.sh && chmod +x acme.sh && ./acme.sh
+   wget -N https://github.com/ZZreturn1/acme-script/raw/main/acme.sh && chmod +x acme.sh && ./acme.sh
     echo ""
     before_show_menu
 }
@@ -382,7 +382,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/teddysun/across/master/bbr.s
 }
 
 cfwarp() {
-wget -N --no-check-certificate https://gitlab.com/rwkgyg/CFwarp/raw/main/CFwarp.sh && bash CFwarp.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash CFwarp.sh
     echo ""
     before_show_menu
 }
