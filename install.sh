@@ -11,20 +11,17 @@ yellow(){ echo -e "\033[33m\033[01m$1\033[0m";}
 blue(){ echo -e "\033[36m\033[01m$1\033[0m";}
 white(){ echo -e "\033[37m\033[01m$1\033[0m";}
 readp(){ read -p "$(yellow "$1")" $2;}
-remoteV=`wget -qO- https://gitlab.com/rwkgyg/x-ui-yg/raw/main/install.sh | sed  -n 2p | cut -d '"' -f 2`
+remoteV=`wget -qO- https://raw.githubusercontent.com/ZZreturn1/test/main/install.sh | sed  -n 2p | cut -d '"' -f 2`
 clear
 green "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"           
-echo -e "${bblue} ░██     ░██      ░██ ██ ██         ░█${plain}█   ░██     ░██   ░██     ░█${red}█   ░██${plain}  "
-echo -e "${bblue}  ░██   ░██      ░██    ░░██${plain}        ░██  ░██      ░██  ░██${red}      ░██  ░██${plain}   "
-echo -e "${bblue}   ░██ ░██      ░██ ${plain}                ░██ ██        ░██ █${red}█        ░██ ██  ${plain}   "
-echo -e "${bblue}     ░██        ░${plain}██    ░██ ██       ░██ ██        ░█${red}█ ██        ░██ ██  ${plain}  "
-echo -e "${bblue}     ░██ ${plain}        ░██    ░░██        ░██ ░██       ░${red}██ ░██       ░██ ░██ ${plain}  "
-echo -e "${bblue}     ░█${plain}█          ░██ ██ ██         ░██  ░░${red}██     ░██  ░░██     ░██  ░░██ ${plain}  "
+echo -e "${bblue} ░█████████       ░████████${plain} "
+echo -e "${bblue}       ░██             ░██${plain} "
+echo -e "${bblue}     ░██              ░██ ${plain} "
+echo -e "${bblue}    ░██              ░██${plain} "
+echo -e "${bblue}   ░██ ${plain}     ░██${plain}  "
+echo -e "${bblue} ░████████${plain}░████████${plain}  "
 green "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" 
-white "甬哥Github项目  ：github.com/yonggekkk"
-white "甬哥blogger博客 ：ygkkk.blogspot.com"
-white "甬哥YouTube频道 ：www.youtube.com/@ygkkk"
-yellow "感谢x-ui代码贡献者们（vaxilu及各位）"
+yellow "感谢x-ui代码贡献者们（vaxilu）"
 green "当前安装版本：$remoteV"
 yellow "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" 
 sleep 2
@@ -204,7 +201,7 @@ install_x-ui() {
     cd /usr/local/
 
     if  [ $# == 0 ] ;then
-        wget -N --no-check-certificate -O /usr/local/x-ui-linux-${arch}.tar.gz https://gitlab.com/rwkgyg/x-ui-yg/raw/main/x-ui-linux-${arch}.tar.gz
+        wget -N --no-check-certificate -O /usr/local/x-ui-linux-${arch}.tar.gz https://github.com/ZZreturn1/test/raw/main/x-ui-linux-${arch}.tar.gz
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 x-ui 失败，请确保你的服务器能够下载 Github 的文件${plain}"
             rm -rf install.sh
@@ -212,7 +209,7 @@ install_x-ui() {
         fi
     else
         last_version=$1
-        url="https://gitlab.com/rwkgyg/x-ui-yg/raw/main/x-ui-linux-${arch}.tar.gz"
+        url="https://github.com/ZZreturn1/test/raw/main/x-ui-linux-${arch}.tar.gz"
         echo -e "开始安装 x-ui v$1"
         wget -N --no-check-certificate -O /usr/local/x-ui-linux-${arch}.tar.gz ${url}
         if [[ $? -ne 0 ]]; then
@@ -231,7 +228,7 @@ install_x-ui() {
     cd x-ui
     chmod +x x-ui bin/xray-linux-${arch}
     cp -f x-ui.service /etc/systemd/system/
-    wget --no-check-certificate -O /usr/bin/x-ui https://gitlab.com/rwkgyg/x-ui-yg/raw/main/x-ui.sh
+    wget --no-check-certificate -O /usr/bin/x-ui https://github.com/ZZreturn1/test/raw/main/x-ui.sh
     chmod +x /usr/bin/x-ui
     chmod +x /usr/local/x-ui/x-ui.sh
     systemctl daemon-reload

