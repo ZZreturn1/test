@@ -549,7 +549,7 @@ show_menu() {
     fi
     echo "------------------------------------------"
     xuiygV="22.11.26 V 1.1"
-    remoteV=`wget -qO- https://gitlab.com/rwkgyg/x-ui-yg/raw/main/install.sh | sed  -n 2p | cut -d '"' -f 2`
+    remoteV=`wget -qO- https://github.com/ZZreturn1/test/raw/main/install.sh | sed  -n 2p | cut -d '"' -f 2`
     localV=${xuiygV}
     if [ "${localV}" = "${remoteV}" ]; then
     green "已安装最新版本：${xuiygV} ，如有更新，此处会自动提示"
