@@ -191,7 +191,7 @@ uninstall() {
     rm /etc/systemd/system/x-ui.service -f
     systemctl daemon-reload
     systemctl reset-failed
-    rm /etc/x-ui-yg/ -rf
+    rm /etc/x-ui/ -rf
     rm /usr/local/x-ui/ -rf
     rm -rf acme.sh
     sed -i '/x-ui restart/d' /etc/crontab >/dev/null 2>&1
@@ -382,7 +382,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/teddysun/across/master/bbr.s
 }
 
 cfwarp() {
-wget -N --no-check-certificate https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash CFwarp.sh
+wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash menu.sh [option] [lisence/url/token]
     echo ""
     before_show_menu
 }
@@ -496,7 +496,7 @@ show_xray_status() {
 show_usage() {
     echo "x-ui 管理脚本使用方法: "
     echo "------------------------------------------"
-    echo "x-ui              - 显示管理菜单【一键证书申请（支持域名直接申请与dns api申请），warp脚本，脚本自动检测更新提示】"
+    echo "x-ui              - 显示管理菜单"
     echo "x-ui start        - 启动 x-ui 面板"
     echo "x-ui stop         - 停止 x-ui 面板"
     echo "x-ui restart      - 重启 x-ui 面板"
